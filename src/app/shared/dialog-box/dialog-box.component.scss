@@ -1,0 +1,19 @@
+.p-dropdown.p-component{
+    width: 100% !important;
+}
+button{
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 1rem;
+    font-size: large;
+    text-align: center;
+}
+select{
+    max-width: 100px;
+    margin-right: 10px;
+}
+.form-check label{
+    font-size: .7rem;
+}

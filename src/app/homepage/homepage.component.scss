@@ -1,0 +1,73 @@
+app-header{
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+app-banner{
+    position: relative;
+}
+app-explore-options{
+    position: relative;
+}
+.places{
+    margin: 4rem auto;
+    .dining{
+        .card{
+            width: 100%;
+            img{
+                width: 100%;
+                object-fit: cover;
+                height: 200px;
+            }
+        }
+        .card:hover{
+            transform: scale(1.1);
+            transition: all 0.8s ease 0s;
+        }
+    }
+    .content-info{
+        display: flex;
+        justify-content: space-between;
+    }
+    .collections{
+        margin: 2rem auto;
+        a.collect{
+            // position: relative;
+            // img{
+            //     position: absolute;
+            //     height: 350px;
+            //     border-radius: 7%;            
+            // }
+            // .card-body{
+            //     position: inherit;
+            //     top: 78%;
+            //     color: #ffffff;
+            //     left: 17px;
+            // }
+        }
+            
+    }
+    .locality{
+        margin: 2rem auto;
+        .card{
+            height: 97px;
+            .img-title-box{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: .7rem;
+                h5{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            span i{
+                font-size: 1.23rem;
+            }
+        }
+        div.row:nth-child(3) {
+            background-color: aqua;
+        }
+    }
+}

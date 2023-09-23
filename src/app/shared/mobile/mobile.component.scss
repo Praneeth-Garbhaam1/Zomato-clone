@@ -1,0 +1,26 @@
+.mobile-app{
+    margin: 7rem auto;
+    .row{
+        .col-sm-6{
+            img#mobile-img{
+                width: inherit;
+                margin: auto 45%;
+            }
+        }
+        .emailorphone{
+            width: -webkit-fill-available;
+        }
+    }
+}
+.download-app{
+    margin: 1rem auto;
+}
+.dwnld-apps{
+    display: flex;
+    width: 13rem;
+    height: 4rem;
+    gap: 1rem;
+    img{
+        height: 90px;
+    }
+}

@@ -1,0 +1,56 @@
+footer{
+    background: #f8f8f8;
+    margin: 2rem 0 -1rem;
+    .container{
+        p{
+            font-size: 0.8rem;
+            color: #696969;
+            margin: 0 0 1rem 0;
+        }
+        .row .col-md-12{
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem auto;
+            img{
+                width: 165px;
+            }
+        }
+    }
+    .footer-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: initial;
+        .menu-head h6{
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin: 0px 0px 1.2rem;
+        }
+        .menu-head nav a{
+            text-decoration: none;
+        }
+        .menu-head nav a p{       
+            font-size: 0.9rem;
+            line-height: 1.4rem;
+            color: rgb(105, 105, 105);
+            margin: 0.6rem 0px;
+        }
+    }
+    .social-links{
+        display: flex;
+        gap: 0.5rem;
+    }
+    a img{
+        width: 7rem;
+        height:2rem;
+        margin: 0.75rem auto;
+    }
+}
+.logo-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button.btn{
+    border: 1px solid #111;
+}

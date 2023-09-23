@@ -1,0 +1,28 @@
+.container-fluid{
+    .row .col-xs-12, ul{
+        display: flex;
+        justify-content: space-around;
+        height: 100px;
+        align-items: center;
+    }
+    .row a.get-app{
+        color: #ffffff;
+    }
+    ul li{
+        margin: 0 1rem;
+        a:not(.create-acct){
+            color: #ffffff !important;
+        }
+        p.policies{
+            display: flex;
+            color: red($color: #d61b1b);
+        }
+    }
+}
+
+.dialog-row{
+    margin: 1rem auto;
+}
+button.p-ripple.p-element.p-button-danger.p-button.p-component {
+    width: 100% !important;
+}

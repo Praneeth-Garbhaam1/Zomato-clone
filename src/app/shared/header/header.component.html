@@ -1,0 +1,27 @@
+<header>
+    <nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a class="get-app" routerLink="/mobile"><img src="/assets/holding_phone.svg" style="
+                        width: 16px;
+                        padding: 1px;" alt="holding phone"/>Get the App</a>
+                    <ul>
+                        <li>
+                            <a routerLink="/investor-relations">Investor Relations</a>
+                        </li>
+                        <li>
+                            <a routerLink="/partner-with-us">Add Restaurant</a>
+                        </li>
+                        <li>
+                            <app-dialog-box  [inputProperty]="'login'"></app-dialog-box>
+                        </li>
+                        <li>
+                            <app-dialog-box  [inputProperty]="'sign up'"></app-dialog-box>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

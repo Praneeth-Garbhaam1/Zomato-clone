@@ -1,0 +1,38 @@
+<div class="container mobile-app">
+    <div class="row">
+        <div class="col-sm-6">
+            <img id="mobile-img" src="/assets/mobileapp.png" alt="mobile-phone"/>
+        </div>
+        <div class="col-sm-6">
+            <h1><b>Get the Zomato app</b></h1>
+            <p>We will send you a link, open it on your phone to download the app</p>
+            <div class="flex align-items-center row">
+                <div class="col-sm-2">
+                    <input type="radio"/>
+                    <label for="ingredient3" class="ml-2">Email</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="radio"/>
+                    <label for="ingredient3" class="ml-2">Phone</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="email" pInputText class="emailorphone" [(ngModel)]="value" />
+                </div>
+                <div class="col-sm-6">
+                    <p-button label="Share link" styleClass="p-button-danger"></p-button>
+                </div>
+            </div>
+            <p class="download-app">Download app from</p>
+            <div class="dwnld-apps">
+                <a href="">
+                    <img src="/assets/playstore.png" alt="google_play-store"/>
+                </a>
+                <a href="">
+                    <img src="/assets/applestore.png" alt="applestore"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

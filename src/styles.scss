@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Geologica');
+
+*{
+    font-family: 'Geologica', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+  font-family: var(--font-family);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.538); 
+    background: transparent;
+    // border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #EF4F5F; 
+    // border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #EF4F5F; 
+  }
+
+  ul li{
+    list-style: none;
+  }
+
+  a, a:hover{
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+.p-accordion p-accordiontab .p-accordion-tab {
+    margin: 1rem auto !important;
+}
+input.p-element.p-autocomplete-input.p-inputtext.p-component.ng-star-inserted {
+  width: 100%;
+  margin: 1rem auto ;
+}
+input[type=radio]{
+  margin: 1rem auto;
+}
+input[type=radio]:checked {
+  background: #EF4F5F !important;
+}

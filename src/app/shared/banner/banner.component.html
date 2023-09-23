@@ -1,0 +1,18 @@
+<section>
+    <div class="zomato-banner">
+        <img src="/assets/Zomato_banner.png" class="main-banner" alt="zomato-banner"/>
+        <div class="content-wrapper">
+            <div class="logo">
+                <div class="low-res-container">
+                    <img src="/assets/Zomato title.png" class="low-res-image" alt="zomato-logo"/>
+                </div>
+                <img src="/assets/Zomato title.png" class="high-res-image" alt="zomato-logo"/>
+            </div>
+            <h1 class="title">Discover the best food & drinks in <b>{{ city }}</b></h1>
+            <div class="input-search-field">
+                <p-autoComplete [(ngModel)]="selectedCountry" [suggestions]="filteredCountries" [style]="{ width: '51vw'}" (completeMethod)="filterCountry($event)" field="name" placeholder="Search by restaurants">
+                </p-autoComplete>
+            </div>
+        </div>
+    </div>
+</section>
