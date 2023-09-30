@@ -10,14 +10,11 @@ import { LocationComponentComponent } from './location-component/location-compon
 
 const routes: Routes = [
   {
-    path:'',
-    component: HomepageComponent,
-    children:[
-      {
-        path:':country',
-        component:LocationComponentComponent
-      }
-    ]
+     path: '', redirectTo: '/home-page', pathMatch: 'full' 
+  },
+  {
+    path:'home-page',
+    component: HomepageComponent
   },
   {
     path:'partner-with-us',

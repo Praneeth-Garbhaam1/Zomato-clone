@@ -17,3 +17,19 @@ select{
 .form-check label{
     font-size: .7rem;
 }
+.dialog-box {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 50;
+}
+.dialog-box a.create-acct{
+    color: #E03546 !important;
+}
+
+a{
+    color: #ffffff;
+}

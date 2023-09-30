@@ -17,6 +17,37 @@
             display: flex;
             color: red($color: #d61b1b);
         }
+        .profile-drop-down{
+            position: relative;
+            cursor: pointer;
+            color: #ffffff;
+            .dropdown{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.65rem;
+            }
+            ul.dropdown-content{
+                display: block;
+                position: absolute;
+                top: 4rem;
+                right: 0rem;
+                border-radius: 8px;
+                visibility: hidden;
+                height: auto;
+                background: #ffffff;
+                li{
+                    margin: 6px;
+                }
+                li:hover{
+                    background-color: grey;
+                }
+                li a.dropdown-item {
+                    color: #111111 !important;
+                    padding: 0;
+                }
+            }
+        }
     }
 }
 

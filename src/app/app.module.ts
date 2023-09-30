@@ -6,13 +6,21 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputMaskModule } from 'primeng/inputmask';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DividerModule } from 'primeng/divider';
 import { AccordionModule } from 'primeng/accordion';
 import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule } from 'primeng/toast';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CheckboxModule } from 'primeng/checkbox';
+import { MegaMenuModule } from 'primeng/megamenu';
 import { CardModule } from 'primeng/card';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule as firebase} from '@angular/fire/compat';
+import { AuthModule } from '@angular/fire/auth';
+import { FirestoreModule } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -36,6 +44,8 @@ import { MobilepageComponent } from './mobilepage/mobilepage.component';
 import { EnterpriseSolutionsComponent } from './enterprise-solutions/enterprise-solutions.component';
 import { LocationComponentComponent } from './location-component/location-component.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { RouterModule } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -65,20 +75,31 @@ import { AccountsComponent } from './accounts/accounts.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ProgressSpinnerModule,
+    MegaMenuModule,
     HttpClientModule,
     DropdownModule,
     DialogModule,
     ButtonModule,
+    AvatarModule,
+    AvatarGroupModule,
     InputMaskModule,
     AutoCompleteModule,
     DividerModule,
+    ToastModule,
     AccordionModule,
     InputTextModule,
     CheckboxModule,
+    RouterModule,
     CardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FirestoreModule,
+    AuthModule
   ],
   providers: [],
+  exports: [
+    firebase
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

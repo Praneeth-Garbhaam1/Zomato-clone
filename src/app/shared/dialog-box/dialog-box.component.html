@@ -1,52 +1,73 @@
-<a *ngIf="inputProperty=='login'" (click)="onLoginDialog()">Login</a>
-<a *ngIf="inputProperty=='sign up'" (click)="onSignUpDialog()">Sign Up</a>
-<p-dialog header="Sign up" [(visible)]="signUpVisible"  [modal]="true" [style]="{width: '30vw'}">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Full name" required/>
-    </div>
-    <div class="input-group mb-3">
-        <input type="email" class="form-control" placeholder="Email" required email/>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-            I agree to Zomato's <a>Terms of Service</a>, <a>Privacy Policy</a> and <a>Content Policies</a>
-        </label>
-      </div>
-      <div class="input-group mb-9">
-        <button type="button" class="btn btn-danger">Create Account</button>
-    </div>
-    <p-divider align="center">
-        <span>Or</span>
-    </p-divider>
-    <div class="d-grid gap-2">
-        <button class="btn btn-outline-secondary" type="button"><i class='bx bxl-google'></i>Continue with Google</button>
-    </div>
-    <p>Already have an account? <a (click)="onLoginDialog('login')" class="create-acct">Login</a></p>
+<a *ngIf="inputProperty == 'login'" (click)="onLoginDialog()">Login</a>
+<a *ngIf="inputProperty == 'sign up'" (click)="onSignUpDialog()">Sign Up</a>
+<p-dialog class="dialog-box" header="Sign up"  [(visible)]="signUpVisible" [modal]="true" [style]="{width: '30vw'}">
+    <p-progressSpinner *ngIf="isLoading" class="text-center"></p-progressSpinner>
+    <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm,'sign Up')">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="fullname" ngModel placeholder="Full name" required />
+        </div>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" id="signupemail" name="signupemail" ngModel placeholder="Email" required email />
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" id="signuppassword" name="signuppassword" ngModel placeholder="Password" required minlength="6" />
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                I agree to Zomato's <a class="create-acct">Terms of Service</a>, <a class="create-acct">Privacy Policy</a> and <a class="create-acct">Content Policies</a>
+            </label>
+        </div>
+        <div class="input-group mb-9">
+            <button type="submit" class="btn btn-danger" [disabled]="!signUpForm.valid">Create Account</button>
+        </div>
+        <p-divider align="center">
+            <span>Or</span>
+        </p-divider>
+        <div class="d-grid gap-2">
+            <button class="btn btn-outline-secondary" type="button"><i class='bx bxl-google'></i>Continue with
+                Google</button>
+        </div>
+        <p>Already have an account? <a (click)="onLoginDialog('login')" class="create-acct">Login</a></p>
+    </form>
 </p-dialog>
 
-<p-dialog header="Login" [(visible)]="loginVisible"  [modal]="true" [style]="{width: '30vw'}">
-    <div class="input-group mb-3" *ngIf="!emailFieldVisible">
-        <select class="form-select" id="inputGroupSelect02" >
-            <option *ngFor="let pcode of phcode" value={{pcode.name}}><p><span>{{pcode.dial_code}}                   </span><span>{{pcode.code}}</span></p></option>
-        </select>
-        <input type="number" class="form-control" [(ngModel)]="phonenumber" placeholder="(999) 999-9999"/>
-    </div>
-        <div class="input-group mb-3" *ngIf="emailFieldVisible">
-            <input type="email" class="form-control" placeholder="Email" required email/>
+<p-toast></p-toast>
+
+<p-dialog header="Login" class="dialog-box" [(visible)]="loginVisible" [modal]="true" [style]="{width: '30vw'}">
+    <p-progressSpinner *ngIf="isLoading" class="text-center"></p-progressSpinner>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm, 'login')" *ngIf="!isLoading">
+        <div class="input-group mb-3" *ngIf="!emailFieldVisible">
+            <select class="form-select" id="inputGroupSelect02">
+                <option *ngFor="let pcode of phcode" value={{pcode.name}}>
+                    <p><span>{{pcode.dial_code}} </span><span>{{pcode.code}}</span></p>
+                </option>
+            </select>
+            <input type="number" class="form-control" name="phonenumber" [(ngModel)]="phonenumber" placeholder="(999) 999-9999" minlength="10" maxlength="15"/>
+            <div id="sign-in-button"></div>
         </div>
-    <div class="input-group mb-9">
-        <button type="button" class="btn btn-danger">Send One Time Password</button>
-    </div>
-    <p-divider align="center" *ngIf="!emailFieldVisible">
-        <span>Or</span>
-    </p-divider>
-    <div class="d-grid gap-2" *ngIf="!emailFieldVisible">
-        <button class="btn btn-outline-secondary" type="button" (click)="showEmailField()"><i class='bx bxs-envelope' ></i>Continue with Email</button>
-        <button class="btn btn-outline-secondary" type="button"><i class='bx bxl-google'></i>Continue with Google</button>
-    </div>
-    <p-divider>
-    </p-divider>
-    <p *ngIf="!emailFieldVisible">New to Zomato? <a (click)="onSignUpDialog('sign up')" class="create-acct">Create account</a></p>
-    <p *ngIf="emailFieldVisible">Already have an account? <a (click)="onLoginShow()" class="create-acct">Login</a></p>
+        <div class="input-group mb-3" *ngIf="emailFieldVisible">
+            <input type="email" class="form-control" id="emaillogin" name="emaillogin" ngModel placeholder="Email" required email />
+        </div>
+        <div class="input-group mb-3" *ngIf="emailFieldVisible">
+            <input type="password" class="form-control" name="password" id="passwordlogin" name="passwordlogin" ngModel placeholder="password" required minlength="6" />
+        </div>
+        <div class="input-group mb-9">
+            <button type="submit" class="btn btn-danger" [disabled]="!loginForm.valid">Sign In</button>
+        </div>
+        <p-divider align="center" *ngIf="!emailFieldVisible">
+            <span>Or</span>
+        </p-divider>
+        <div class="d-grid gap-2" *ngIf="!emailFieldVisible">
+            <button class="btn btn-outline-secondary" type="button" (click)="showEmailField()"><i
+                    class='bx bxs-envelope'></i>Continue with Email</button>
+            <button class="btn btn-outline-secondary" type="button"><i class='bx bxl-google'></i>Continue with
+                Google</button>
+        </div>
+        <p-divider>
+        </p-divider>
+        <p *ngIf="!emailFieldVisible">New to Zomato? <a (click)="onSignUpDialog('sign up')" class="create-acct">Create
+                account</a></p>
+        <p *ngIf="emailFieldVisible">Already have an account? <a (click)="onLoginShow()" class="create-acct">Login</a></p>
+    </form>
 </p-dialog>
