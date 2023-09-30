@@ -63,6 +63,11 @@ export class HeaderComponent {
     }
   }
 
+  onLogOut() {
+    this.isAuthenticated = !this.isAuthenticated
+    this.authService.logout();
+  }
+
   private showDialogBox(visible: any, modalType: string) {
     // const alertcmp = new AlertComponent();
     const dialogcmp = this.componentFactoryResolver.resolveComponentFactory(DialogBoxComponent);

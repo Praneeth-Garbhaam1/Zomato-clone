@@ -7,6 +7,7 @@ import { InvestorRelationsComponent } from './investor-relations/investor-relati
 import { MobilepageComponent } from './mobilepage/mobilepage.component';
 import { EnterpriseSolutionsComponent } from './enterprise-solutions/enterprise-solutions.component';
 import { LocationComponentComponent } from './location-component/location-component.component';
+import { AccountsComponent } from './accounts/accounts.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
     path:'enterprise-solutions',
     component:EnterpriseSolutionsComponent
   },
+  {
+    path:'users',
+    component: AccountsComponent
+  }
 ];
 
 

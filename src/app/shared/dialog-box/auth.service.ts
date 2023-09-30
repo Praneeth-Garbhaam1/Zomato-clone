@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { User } from './user.model';
+import { Router } from '@angular/router';
 
 export interface AuthResponseData {
   idToken: string,
@@ -17,7 +18,8 @@ export interface AuthResponseData {
 export class AuthService {
   user = new BehaviorSubject<User>(null);
   loginMode = false;
-  constructor(private http: HttpClient) { }
+  private tokenExpirationTimer: any;
+  constructor(private http: HttpClient, private route: Router) { }
 
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBCTNKNYieJh_C0K_TOg5YUX8j21pSjXlI',
@@ -47,6 +49,16 @@ export class AuthService {
         );
         this.loginMode = true
       }))
+  }
+  
+  logout() {
+    this.user.next(null);
+    this.route.navigate(['/auth'])
+    localStorage.removeItem('user')
+    if(this.tokenExpirationTimer){
+      clearTimeout(this.tokenExpirationTimer)
+    }
+    this.tokenExpirationTimer = null;
   }
   
   private handleAuthentication(

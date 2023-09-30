@@ -31,19 +31,21 @@ app-explore-options{
     }
     .collections{
         margin: 2rem auto;
-        a.collect{
-            // position: relative;
-            // img{
-            //     position: absolute;
-            //     height: 350px;
-            //     border-radius: 7%;            
-            // }
-            // .card-body{
-            //     position: inherit;
-            //     top: 78%;
-            //     color: #ffffff;
-            //     left: 17px;
-            // }
+        .col-sm-3 {
+            position: relative;
+            .collect{
+                position: relative;
+                img{
+                    height: 23rem;
+                    border-radius: 8px;
+                }
+                .card-body{
+                    position: absolute;
+                    color: #fff;
+                    top: 6rem;
+                    padding: 1rem;
+                }
+            }
         }
             
     }
