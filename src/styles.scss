@@ -93,6 +93,7 @@ input[type=radio]:checked {
 }
 .p-megamenu{
   padding: 0;
+  border: 1px solid #111;
 }
 .p-megamenu-panel {
   display: none;
@@ -115,4 +116,8 @@ input[type=radio]:checked {
   color: #495057;
   padding: 0.45rem 1.25rem;
   -webkit-user-select: none;
+}
+.p-component-overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  transition-duration: 0.2s;
 }

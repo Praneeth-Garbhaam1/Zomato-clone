@@ -1,5 +1,5 @@
-<a *ngIf="inputProperty == 'login'" (click)="onLoginDialog()">Login</a>
-<a *ngIf="inputProperty == 'sign up'" (click)="onSignUpDialog()">Sign Up</a>
+<!-- <a *ngIf="inputProperty == 'login'" (click)="onLoginDialog()"><span class="navitem">Login</span></a>
+<a *ngIf="inputProperty == 'sign up'" (click)="onSignUpDialog()"><span class="navitem">Sign Up</span></a> -->
 <p-dialog class="dialog-box" header="Sign up"  [(visible)]="signUpVisible" [modal]="true" [style]="{width: '30vw'}">
     <p-progressSpinner *ngIf="isLoading" class="text-center"></p-progressSpinner>
     <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm,'sign Up')">

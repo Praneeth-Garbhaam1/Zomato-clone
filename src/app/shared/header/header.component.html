@@ -1,5 +1,8 @@
 <header>
     <nav>
+        <ng-template appPlaceholder>
+
+        </ng-template>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
@@ -14,10 +17,10 @@
                             <a routerLink="/partner-with-us">Add Restaurant</a>
                         </li>
                         <li *ngIf="!isAuthenticated">
-                            <app-dialog-box  [inputProperty]="'login'"></app-dialog-box>
+                            <a (click)="onLoginDialog()"><span class="navitem">Login</span></a>
                         </li>
                         <li *ngIf="!isAuthenticated">
-                            <app-dialog-box  [inputProperty]="'sign up'"></app-dialog-box>
+                            <a (click)="onSignUpDialog()"><span class="navitem">Sign Up</span></a>
                         </li>
                         <li *ngIf="isAuthenticated">
                             <div class="profile-drop-down">

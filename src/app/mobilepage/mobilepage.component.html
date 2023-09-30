@@ -1,3 +1,42 @@
-<app-header></app-header>
+<header>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <a class="get-app navbar-brand" routerLink="/mobile">
+                        <img src="/assets/zomato_footer.png" alt="zomato_logo"/>
+                    </a>
+                    <ul>
+                        <li *ngIf="!isAuthenticated">
+                            <app-dialog-box  [inputProperty]="'login'"></app-dialog-box>
+                        </li>
+                        <li *ngIf="!isAuthenticated">
+                            <app-dialog-box  [inputProperty]="'sign up'"></app-dialog-box>
+                        </li>
+                        <li *ngIf="isAuthenticated">
+                            <div class="profile-drop-down">
+                                <div class="dropdown" (click)="showDropdown(dropdownmenu)">
+                                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png" pBadge value="4" styleClass="mr-2" size="large" shape="circle"></p-avatar>
+                                    <span>Sai</span>
+                                    <i class='bx bx-chevron-down'></i>
+                                </div>
+                                <ul class="dropdown-content dropdown-menu" #dropdownmenu>
+                                    <li><a class="dropdown-item">Profile</a></li>
+                                    <li><a class="dropdown-item">Notifications</a></li>
+                                    <li><a class="dropdown-item">Bookmarks</a></li>
+                                    <li><a class="dropdown-item">Reviews</a></li>
+                                    <li><a class="dropdown-item">Network</a></li>
+                                    <li><a class="dropdown-item">Find Friends</a></li>
+                                    <li><a class="dropdown-item">Settings</a></li>
+                                    <li><a class="dropdown-item">Log out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 <app-mobile></app-mobile>
 <app-footer></app-footer>

@@ -12,8 +12,8 @@ import { Observable } from 'rxjs';
   providers: [MessageService]
 })
 export class DialogBoxComponent implements OnInit{
-  loginVisible: boolean = false;
-  signUpVisible: boolean = false;
+  @Input() loginVisible: boolean = false;
+  @Input() signUpVisible: boolean = false;
   isLoading = false;
   checked = true;
   emailFieldVisible = false;

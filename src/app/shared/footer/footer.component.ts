@@ -97,6 +97,7 @@ export class FooterComponent {
             {
               items: [{
                 label: 'India',
+                url:'/mobile'
               }]
             },
             {

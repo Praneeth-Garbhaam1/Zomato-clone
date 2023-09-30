@@ -46,6 +46,7 @@ import { LocationComponentComponent } from './location-component/location-compon
 import { AccountsComponent } from './accounts/accounts.component';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { environment } from 'src/environments/environment';
     MobilepageComponent,
     EnterpriseSolutionsComponent,
     LocationComponentComponent,
-    AccountsComponent
+    AccountsComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
